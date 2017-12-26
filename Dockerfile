@@ -20,10 +20,10 @@ RUN echo 'blacklist dvb_usb_rtl28xxu' > /etc/modprobe.d/raspi-blacklist.conf && 
 
 WORKDIR /tmp 
 
-RUN git clone https://github.com/antirez/dump1090.git
+RUN git clone https://github.com/mutability/dump1090.git
 
 WORKDIR /tmp/dump1090
 
 RUN make
 
-CMD ["./dump1090"]
+ENTRYPOINT ["./dump1090"]
