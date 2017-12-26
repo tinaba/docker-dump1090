@@ -9,7 +9,6 @@ RUN apt-get update && \
 WORKDIR /tmp
 
 RUN echo 'blacklist dvb_usb_rtl28xxu' > /etc/modprobe.d/raspi-blacklist.conf && \
-    echo 'blacklist dvb_usb_rtl28xxu\r\n' > /etc/modprobe.d/raspi-blacklist.conf
     git clone git://git.osmocom.org/rtl-sdr.git && \
     mkdir rtl-sdr/build && \
     cd rtl-sdr/build && \
