@@ -26,4 +26,4 @@ WORKDIR /tmp/dump1090
 
 RUN make
 
-ENTRYPOINT ["./dump1090"]
+CMD ["./dump1090"]
