@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 MAINTAINER Takashi Inaba
 
 RUN apt-get update && \
-    apt-get install -y libusb-1.0-0-dev pkg-config ca-certificates git-core cmake build-essential module-init-tools --no-install-recommends && \
+    apt-get install -y libusb-1.0-0-dev pkg-config ca-certificates git-core cmake build-essential module-init-tools libbladerf-dev libpcap-dev libncurses5-dev --no-install-recommends && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -20,7 +20,7 @@ RUN echo 'blacklist dvb_usb_rtl28xxu' > /etc/modprobe.d/raspi-blacklist.conf && 
 
 WORKDIR /tmp 
 
-RUN git clone https://github.com/mutability/dump1090.git
+RUN git clone https://github.com/flightaware/dump1090.git
 
 WORKDIR /tmp/dump1090
 
